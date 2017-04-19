@@ -1,0 +1,6 @@
+extends: '@lttb/default'
+
+rules:
+  import/no-extraneous-dependencies:
+    - error
+    - peerDependencies: true

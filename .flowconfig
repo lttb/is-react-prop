@@ -1,0 +1,7 @@
+[ignore]
+.*/node_modules/.*
+
+<PROJECT_ROOT>/lib/
+
+[options]
+all=true
