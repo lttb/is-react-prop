@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/lttb/is-react-prop#readme",
   "peerDependencies": {
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "@lttb/eslint-config-default": "github:lttb/configs#js",
