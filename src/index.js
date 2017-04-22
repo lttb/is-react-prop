@@ -15,20 +15,28 @@ const reactProps = {
   suppressContentEditableWarning: true,
   onFocusIn: true,
   onFocusOut: true,
+
+  // deprecated
+  valueLink: true,
+  checkedLink: true,
 }
 
+const hasProp = Object.prototype.hasOwnProperty
 
 export default (prop: string) => {
   if (
-    Object.prototype.hasOwnProperty.call(DOMProperty, prop) ||
-    DOMProperty.isCustomAttribute(prop)
+    hasProp.call(DOMProperty.properties, prop)
+    || DOMProperty.isCustomAttribute(prop.toLowerCase())
   ) {
     return true
   }
-  if (Object.prototype.hasOwnProperty.call(reactProps, prop) && reactProps[prop]) {
+  if (hasProp.call(reactProps, prop) && reactProps[prop]) {
     return true
   }
-  if (Object.prototype.hasOwnProperty.call(EventPluginRegistry.registrationNameModules, prop)) {
+  if (
+    hasProp.call(EventPluginRegistry.registrationNameModules, prop)
+    || hasProp.call(EventPluginRegistry.registrationNameModules, prop.split('Capture')[0])
+  ) {
     return true
   }
 
