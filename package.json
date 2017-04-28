@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf lib/*",
     "lint": "eslint src",
-    "prebuild": "npm run clean && npm run lint",
+    "test": "jest",
+    "prebuild": "npm run clean && npm run lint && npm test",
     "build": "babel src --out-dir lib --ignore tests",
     "postbuild": "flow-copy-source src lib",
     "flow:typed": "flow-typed install",
@@ -41,7 +42,10 @@
     "eslint": "^3.13.0",
     "flow-bin": "^0.44.2",
     "flow-copy-source": "^1.1.0",
-    "flow-typed": "^2.0.0"
+    "flow-typed": "^2.0.0",
+    "jest": "^19.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "keywords": [
     "react",
