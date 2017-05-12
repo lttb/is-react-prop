@@ -1,43 +1,8 @@
-const reactProps = {
-  children: true,
-  dangerouslySetInnerHTML: true,
-  key: true,
-  ref: true,
+import * as whitelists from './whitelists'
 
-  autoFocus: true,
-  defaultValue: true,
-  defaultChecked: true,
-  innerHTML: true,
-  suppressContentEditableWarning: true,
-  onFocusIn: true,
-  onFocusOut: true,
-
-  // deprecated
-  valueLink: true,
-  checkedLink: true,
-
-  // react different naming
-  allowFullScreen: true,
-
-  // include some
-  role: true,
-  scoped: true,
-
-  // events
-  onDoubleClick: true, // ondblclick
-
-  onAnimationStart: true,
-  onAnimationEnd: true,
-  onAnimationIteration: true,
-  onTransitionEnd: true,
-
-  // schema.org
-  itemProp: true,
-  itemScope:true,
-  itemType: true,
-  itemID: true,
-  itemRef: true,
-}
+const reactProps = Object
+  .values(whitelists)
+  .reduce((acc, val) => ({...acc, ...val}), {})
 
 const NS = [
   'http://www.w3.org/1999/xhtml',
