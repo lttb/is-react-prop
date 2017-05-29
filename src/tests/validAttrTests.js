@@ -1,8 +1,7 @@
 import { expect } from 'chai'
-import domElements from './domElements'
 // thanks to styled-components for these tests
 
-export default (validAttr) => {
+export default (validAttr: Function) => {
   describe('validAttr', () => {
     it('should allow all the reactProps', () => {
       expect(validAttr('children')).to.equal(true)

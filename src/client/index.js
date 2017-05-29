@@ -2,7 +2,7 @@ import * as whitelists from '../whitelists'
 
 const reactProps = Object
   .values(whitelists)
-  .reduce((acc, val) => ({...acc, ...val}), {})
+  .reduce((acc, val) => ({ ...acc, ...val }), {})
 
 const NS = [
   'http://www.w3.org/1999/xhtml',

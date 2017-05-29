@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "description": "Check if property is react property",
   "main": "lib/index.js",
+  "browser": "lib/client/index.js",
   "scripts": {
     "clean": "rm -rf lib/*",
     "lint": "eslint src",

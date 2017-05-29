@@ -153,7 +153,7 @@ export default {
     'target',
     'title',
     'type',
-    'referrerPolicy'
+    'referrerPolicy',
   ]),
   map: new Set(['name']),
   menu: new Set(['label', 'type']),
