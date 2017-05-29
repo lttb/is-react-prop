@@ -3,7 +3,7 @@ const webpackConfig = require('./webpack.config')
 // Karma configuration
 // Generated on Thu Apr 27 2017 03:21:32 GMT+0300 (MSK)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -41,6 +41,13 @@ module.exports = function(config) {
       noInfo: true
     },
 
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
+
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -66,7 +73,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: [process.env.TRAVIS ? 'Chrome_travis_ci' : 'Chrome'],
 
 
     // Continuous Integration mode
