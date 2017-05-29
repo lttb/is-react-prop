@@ -2,8 +2,11 @@
   "name": "is-react-prop",
   "version": "0.1.2",
   "description": "Check if property is react property",
-  "main": "lib/index.js",
-  "browser": "lib/client/index.js",
+  "main": "index.js",
+  "browser": {
+    "is-react-prop": "./client/index.js",
+    "is-react-prop/checkAttr": "./client/checkAttr.js"
+  },
   "scripts": {
     "clean": "rm -rf lib/*",
     "lint": "eslint src",
@@ -14,7 +17,8 @@
     "test:server:watch": "jest --watch",
     "prebuild": "npm run clean && npm run lint && npm test",
     "build": "babel src --out-dir lib --ignore tests",
-    "postbuild": "flow-copy-source src lib",
+    "postbuild": "npm run flow:cpsrc && copyfiles -e './*.js' ./*.* LICENSE -a -f lib",
+    "flow:cpsrc": "flow-copy-source -i '**/tests/**' src lib",
     "flow:typed": "flow-typed install",
     "flow:stub": "flow-typed create-stub",
     "preversion": "npm run build",
@@ -47,6 +51,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "chai": "^3.5.0",
+    "copyfiles": "^1.2.0",
     "cross-env": "^4.0.0",
     "eslint": "^3.13.0",
     "flow-bin": "^0.44.2",

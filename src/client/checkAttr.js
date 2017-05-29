@@ -10,12 +10,10 @@ export default (elem: string | Object, attr: string) => {
   if (attr in domElem) return true
 
   const a = attr.toLowerCase()
-
   if (a in domElem) return true
-
   if (isCustomProp(a)) return true
 
-  const e = attr.split('Capture')[0]
+  const [e] = attr.split('Capture')
   if (e.toLowerCase() in domElem || e in reactProps) return true
 
   return false

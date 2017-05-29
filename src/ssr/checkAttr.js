@@ -2,8 +2,8 @@ import reactProps from './reactProps'
 import isCustomProp from '../isCustomProp'
 import attrs from './htmlAttributes'
 
-export default (elem: string | Set<string>, prop: string) =>
+export default (elem: string | Object, prop: string) =>
   reactProps.has(prop)
     || attrs['*'].has(prop)
-    || (typeof elem === 'string' ? attrs[elem].has(prop) : elem.has(prop))
+    || (typeof elem === 'string' ? attrs[elem] && attrs[elem].has(prop) : prop in elem)
     || isCustomProp(prop.toLowerCase())

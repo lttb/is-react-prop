@@ -1,1 +1,1 @@
-export * from './ssr'
+export { default } from './ssr'

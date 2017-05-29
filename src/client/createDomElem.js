@@ -5,13 +5,13 @@ const NS = [
 
 const elements = {}
 
-export default (name: string): HTMLElement | HTMLUnknownElement => {
+export default (name: string): HTMLElement | Element => {
   if (name in elements) return elements[name]
 
-  let domElem = HTMLUnknownElement
+  let domElem = window.HTMLUnknownElement
   for (let i = 0; i < NS.length; i += 1) {
     domElem = document.createElementNS(NS[i], name)
-    if (!(domElem instanceof HTMLUnknownElement)) {
+    if (!(domElem instanceof window.HTMLUnknownElement)) {
       elements[name] = domElem
 
       return domElem
