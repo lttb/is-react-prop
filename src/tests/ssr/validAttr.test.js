@@ -1,6 +1,6 @@
 import validAttrTests from '../validAttrTests'
-import { validAttr } from '../../ssr'
+import validAttr from '../../ssr'
 
-describe('validAttr', () => {
+describe('validAttr for server', () => {
   validAttrTests(validAttr)
 })

@@ -1,10 +1,6 @@
-import domElements from '../domElements'
 import validAttrTests from '../validAttrTests'
-import { validAttr, createDomElem } from '../../'
+import validAttr from '../../client'
 
-// thanks to styled-components for these tests
-
-describe('validAttr', () => {
-  domElements.forEach(createDomElem)
+describe('validAttr for client', () => {
   validAttrTests(validAttr)
 })

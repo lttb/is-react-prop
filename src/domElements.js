@@ -1,7 +1,6 @@
-import svgElements from 'svg-elements'
 // Thanks to ReactDOMFactories for this handy list!
 
-export default svgElements.concat([
+export default [
   'a',
   'abbr',
   'address',
@@ -136,4 +135,4 @@ export default svgElements.concat([
   'svg',
   'text',
   'tspan',
-])
+]
