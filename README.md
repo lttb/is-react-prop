@@ -2,6 +2,24 @@
 
 ## Usage
 
+### Recommended way
+
+This way `checkAttr` has no overhead for initialalization and no lists of `dom-elements`.
+It's also more accurate, because it detects available property for the element.
+
+```js
+import checkAttr from 'is-react-prop/checkAttr'
+
+console.log(checkAttr('div', 'data-name')) // true
+console.log(checkAttr('button', 'onClick')) // true
+console.log(checkAttr('div', 'target')) // false
+console.log(checkAttr(document.createElement('input'), 'onChange')) // true
+```
+
+### isReactProp
+
+But you can also use `isReactProp` like this:
+
 ```js
 import isReactProp from 'is-react-prop'
 
@@ -12,8 +30,5 @@ console.log(isReactProp('unknownProp')) // false
 
 ## How it works?
 
-This modules uses `DOMProperty` and `EventPluginRegistry` from `react-dom`.
-
-It's important to note, that both modules act like singleton. They have their own mutable state, where React inject values like available events and DOM element properties.
-
-So this package just take them as is and get the same values as React for props checking from them.
+`is-react-prop` detects available property in runtime on the client, and it has minimum usage of whitelists. That's why this package is very lightweight and accurate.
+So it uses whitelists on the server side just for SSR.
