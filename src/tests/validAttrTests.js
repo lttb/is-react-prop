@@ -1,3 +1,4 @@
+// $FlowIgnore
 import { expect } from 'chai'
 
 // thanks to styled-components for these tests
