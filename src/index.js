@@ -1,1 +1,1 @@
-export { default } from './ssr'
+export { default } from './server'

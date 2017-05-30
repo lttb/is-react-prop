@@ -1,5 +1,5 @@
 import reactProps from './reactProps'
-import isCustomProp from '../isCustomProp'
+import isCustomProp from '../common/isCustomProp'
 import attrs from './htmlAttributes'
 
 export default (elem: string | Object, prop: string) =>

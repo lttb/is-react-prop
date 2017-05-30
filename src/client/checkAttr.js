@@ -1,8 +1,8 @@
 import createDomElem from './createDomElem'
-import isCustomProp from '../isCustomProp'
+import isCustomProp from '../common/isCustomProp'
 import reactProps from './reactProps'
 
-export default (elem: string | Object, attr: string) => {
+export default (elem: string | Object | Element, attr: string) => {
   if (reactProps[attr]) return true
 
   const domElem = typeof elem === 'string' ? createDomElem(elem) : elem
@@ -14,7 +14,7 @@ export default (elem: string | Object, attr: string) => {
   if (isCustomProp(a)) return true
 
   const [e] = attr.split('Capture')
-  if (e.toLowerCase() in domElem || e in reactProps) return true
+  if (e in reactProps || e.toLowerCase() in domElem) return true
 
   return false
 }

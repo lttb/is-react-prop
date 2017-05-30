@@ -1,1 +1,1 @@
-export { default } from './ssr/checkAttr'
+export { default } from './server/checkAttr'
