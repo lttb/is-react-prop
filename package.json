@@ -5,7 +5,7 @@
   "main": "index.js",
   "browser": {
     "is-react-prop": "./client/index.js",
-    "is-react-prop/checkAttr": "./client/checkAttr.js"
+    "./checkAttr": "./client/checkAttr.js"
   },
   "scripts": {
     "clean": "rm -rf lib/*",
@@ -21,14 +21,8 @@
     "flow": "flow check",
     "flow:cpsrc": "flow-copy-source -i '**/tests/**' src lib",
     "flow:typed": "flow-typed install",
-    "flow:stub": "flow-typed create-stub",
-    "preversion": "npm run build",
-    "postversion": "git push --follow-tags && npm publish"
+    "flow:stub": "flow-typed create-stub"
   },
-  "files": [
-    "src",
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lttb/is-react-prop.git"
