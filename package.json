@@ -57,6 +57,7 @@
     "flow-copy-source": "^1.1.0",
     "flow-typed": "^2.0.0",
     "jest": "^19.0.2",
+    "karma": "^1.6.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-mocha": "^1.3.0",
@@ -75,10 +76,6 @@
     "react",
     "prop"
   ],
-  "dependencies": {
-    "karma": "^1.6.0",
-    "ramda": "^0.23.0"
-  },
   "jest": {
     "rootDir": "src",
     "testPathIgnorePatterns": [
