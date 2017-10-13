@@ -1,5 +1,9 @@
 # Is React Prop?
 
+
+[![Travis branch](https://img.shields.io/travis/lttb/is-react-prop/master.svg?style=flat)](https://travis-ci.org/lttb/is-react-prop)
+[![npm version](https://img.shields.io/npm/v/is-react-prop.svg?style=flat)](https://www.npmjs.com/package/is-react-prop)
+
 ## Usage
 
 ### Recommended way
