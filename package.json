@@ -1,6 +1,6 @@
 {
   "name": "is-react-prop",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Check if property is react property",
   "main": "index.js",
   "browser": {
